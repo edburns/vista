@@ -14,6 +14,8 @@ moving parts have not been instrumented to run with proxies.
 - Twitter [developer account](https://apps.twitter.com/)
   - NOTE: MAKE A NEW ACCOUNT! Otherwise this will tweet a bunch of things to your Twitter.
 - Flickr [developer account](https://www.flickr.com/services/apps/create/apply/)
+- Slack [legacy token](https://get.slack.help/hc/en-us/articles/215770388-Create-and-regenerate-API-tokens)
+
 
 ### Step 2: Set required env vars
 
@@ -38,9 +40,20 @@ fn start
 
 (Easy huh?)
 
+If you would like to see the logs of the functions on stdout/stderr, run
+the fn server as a docker image:
+
+```sh
+docker run --rm -d --name functions -p 8080:8080 -e LOG_LEVEL=debug -v /var/run/docker.sock:/var/run/docker.sock  fnproject/functions:latest
+```
+
+Then do a `docker logs -f <container hash>`.
+
 ### Step 3: Set everything up
 
-Use the `local` arg to do everything locally (ie: doesn't push to docker registry).
+Ensure the envs in your environment file above are set in the current
+shell, then use the `local` arg to do everything locally (ie: doesn't
+push to docker registry).
 
 ```sh
 ./setup.sh [local]

@@ -14,4 +14,8 @@ tmp/
 data/
 vista.html
 .idea
+<<<<<<< HEAD
 envs-*.sh
+=======
+envs-edburns.sh
+>>>>>>> 45cf58f... Add flow cat to README

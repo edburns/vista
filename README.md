@@ -71,14 +71,14 @@ This will open a browser window to view the results.
 When running in flow mode, open [the flow ui](http://localhost:3000/#/),
 cd to `services/flow` and do
 
+```sh
+cat payload.json | fn call vista flow
+```
+
 You should also see activity in the server logs, and output to the
 vista.html screen. As the draw function finishes, the final images will
 push to the screen. Plate detection will also Tweet out from the alert
 function.
-
-```sh
-cat payload.json | fn call vista flow
-```
 
 Make sure your slack link has a channel called `demostream`.
 

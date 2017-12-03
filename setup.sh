@@ -42,7 +42,7 @@ sed  -e "s/APP/$APP/" -e "s/DOCKER_LOCALHOST/$DOCKER_LOCALHOST/" < $PWD/scripts/
 
 
 # if we want to save data outside of container, add this into line below: -v /tmp/export/minio1:/export
-docker run -d -p 9000:9000  --rm --name minio1 -v $PWD/scripts/minio_config.json:/root/.minio/config.json minio/minio  server /export
+docker run -d -p 9000:9000  --rm --name minio1 -v $PWD/scripts/minio_config.json:/root/.minio/config.json minio/minio:latest-minio-2017-12-02-2325Z  server /export
 sleep 5
 
 docker run --rm -v $PWD:/mc -w /mc --entrypoint=/bin/sh  -e DOCKER_LOCALHOST -e VISTA_MODE minio/mc scripts/setup_minio.sh

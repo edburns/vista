@@ -36,6 +36,14 @@ Then start `fn` server:
 fn start
 ```
 
+To start a specific version of the fn server:
+
+```sh
+docker run --rm -d --name functions -p 8080:8080 -e LOG_LEVEL=debug -v /var/run/docker.sock:/var/run/docker.sock  fnproject/functions:
+```
+
+
+
 (Easy huh?)
 
 ### Step 3: Set everything up
